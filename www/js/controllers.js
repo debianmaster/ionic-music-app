@@ -21,10 +21,17 @@ angular.module('starter.controllers', [])
   // Open the login modal
   $scope.login = function() {
     //$scope.modal.show();
-    var media = new Media('http://ps-tech.in/test/test.mp3', null, null, null);
+    var media = new Media('http://ps-tech.in/test/test.mp3', null, null, mediaStatusCallback);
     $cordovaMedia.play(media);
   };
 
+      var mediaStatusCallback = function(status) {
+        if(status == 1) {
+          $ionicLoading.show({template: 'Loading...'});
+        } else {
+          $ionicLoading.hide();
+        }
+      }
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
