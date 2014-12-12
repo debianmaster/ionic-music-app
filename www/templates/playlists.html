@@ -1,9 +1,31 @@
 <ion-view view-title="Playlists">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
-      </ion-item>
-    </ion-list>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="query">
+      </label>
+    </div>
+    <div class="list card" ng-repeat="playlist in playlists | filter: query">
+      <a class="item item-icon-right" ng-click="playlist.visible=!playlist.visible">
+        {{playlist.movieName}}
+        <i class="icon ion-chevron-down"></i>
+      </a>
+      <div class="card ng-hide" ng-init="playlist.visible = false" ng-show="playlist.visible">
+        <div class="item item-text-wrap">
+          <button class="button button-positive" ng-click="addSong(playlist,false);playlist.visible = false">Play All</button>
+          <button class="button button-royal icon-right ion-chevron-right" ng-click="">Open Movie</button>
+        </div>
+      </div>
+    </div>
   </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive" ng-show="isPlaying">
+    <div class="buttons">
+      <button class="button" ng-click="stopSong()">{{playStatus}}</button>
+    </div>
+    <h1 class="title"><progress max="{{totalDuration}}" value="{{timeElapsed}}"></progress></h1>
+    <div class="buttons">
+      <button class="button">{{timeElapsed}}</button>
+    </div>
+  </ion-footer-bar>
 </ion-view>
