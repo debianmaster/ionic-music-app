@@ -1,0 +1,7 @@
+com.ionic.keyboard 1.0.3 "Keyboard"
+com.phonegap.plugins.PushPlugin 2.4.0 "PushPlugin"
+org.apache.cordova.console 0.2.12 "Console"
+org.apache.cordova.device 0.2.12 "Device"
+org.apache.cordova.file 1.3.1 "File"
+org.apache.cordova.file-transfer 0.4.8 "File Transfer"
+org.apache.cordova.media 0.2.14 "Media"
