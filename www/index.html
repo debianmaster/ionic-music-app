@@ -7,7 +7,11 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+    <script>
+      function onNotificationGCM2(result) {
+        alert(result);
+      }
+    </script>
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -24,6 +28,7 @@
   </head>
 
   <body ng-app="starter">
+    <div id="app-status-ul"></div>
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

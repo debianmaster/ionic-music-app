@@ -19,4 +19,5 @@
   <feature name="Media">
     <param name="android-package" value="org.apache.cordova.media.AudioHandler" onload="true"/>
   </feature>
+  <log level="DEBUG"/>
 </widget>

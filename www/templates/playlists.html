@@ -19,13 +19,13 @@
       </div>
     </div>
   </ion-content>
-  <ion-footer-bar align-title="left" class="bar-assertive" ng-show="isPlaying">
+  <ion-footer-bar align-title="left" class="bar-assertive">
     <div class="buttons">
-      <button class="button" ng-click="stopSong()">{{playStatus}}</button>
+      <button class="button" ng-click="uiPlay('next')"><<</button>
     </div>
     <h1 class="title"><progress max="{{totalDuration}}" value="{{timeElapsed}}"></progress></h1>
     <div class="buttons">
-      <button class="button">{{timeElapsed}}</button>
+      <button class="button" ng-click="uiPlay('last')">>></button>
     </div>
   </ion-footer-bar>
 </ion-view>
